@@ -1,5 +1,5 @@
 
-import { ReactNode } from 'react';
+import { ReactNode, CSSProperties } from 'react';
 import { Package, MapPin, Clock, CalendarClock } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -14,6 +14,7 @@ interface DeliveryCardProps {
   estimatedArrival: string;
   createdAt: string;
   className?: string;
+  style?: CSSProperties;
 }
 
 const DeliveryCard = ({
@@ -25,6 +26,7 @@ const DeliveryCard = ({
   estimatedArrival,
   createdAt,
   className,
+  style,
 }: DeliveryCardProps) => {
   const getStatusDisplay = (): { label: string; color: string } => {
     switch (status) {
@@ -59,9 +61,10 @@ const DeliveryCard = ({
   return (
     <div 
       className={cn(
-        'glassmorphism rounded-xl p-5 animate-scale-in card-hover',
+        'glassmorphism rounded-xl p-5 animate-scale-in',
         className
       )}
+      style={style}
     >
       <div className="flex justify-between items-start mb-4">
         <h3 className="font-medium">Delivery #{id}</h3>

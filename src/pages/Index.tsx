@@ -5,7 +5,7 @@ import { PackageSearch, Truck, AlertTriangle, Package, BarChart3, Clock } from '
 import AnimatedTransition from '@/components/AnimatedTransition';
 import Navbar from '@/components/Navbar';
 import DashboardCard from '@/components/DashboardCard';
-import { Chart } from '@/components/ui/chart';
+import { ChartContainer } from '@/components/ui/chart';
 import { Link } from 'react-router-dom';
 
 // Mock data
@@ -108,7 +108,7 @@ const Index = () => {
               </div>
               
               <div className="h-[240px] w-full">
-                <Chart>
+                <ChartContainer config={{}}>
                   <Line
                     type="monotone"
                     dataKey="value"
@@ -118,7 +118,7 @@ const Index = () => {
                     dot={{ fill: "hsl(var(--primary))", r: 4 }}
                     activeDot={{ fill: "hsl(var(--primary))", r: 6, strokeWidth: 0 }}
                   />
-                </Chart>
+                </ChartContainer>
               </div>
             </div>
             
@@ -132,7 +132,7 @@ const Index = () => {
               </div>
               
               <div className="h-[240px] w-full">
-                <Chart>
+                <ChartContainer config={{}}>
                   <Line
                     type="monotone"
                     dataKey="value"
@@ -142,7 +142,7 @@ const Index = () => {
                     dot={{ fill: "hsl(var(--accent))", r: 4 }}
                     activeDot={{ fill: "hsl(var(--accent))", r: 6, strokeWidth: 0 }}
                   />
-                </Chart>
+                </ChartContainer>
               </div>
             </div>
           </section>

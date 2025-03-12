@@ -1,5 +1,5 @@
 
-import { ReactNode } from 'react';
+import { ReactNode, CSSProperties } from 'react';
 import { CheckCircle, AlertTriangle, HelpCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -14,6 +14,7 @@ interface InventoryItemProps {
   location: string;
   lastUpdated: string;
   className?: string;
+  style?: CSSProperties;
 }
 
 const InventoryItem = ({
@@ -25,6 +26,7 @@ const InventoryItem = ({
   location,
   lastUpdated,
   className,
+  style,
 }: InventoryItemProps) => {
   // Determine status based on stock level
   const getStatus = (): InventoryStatus => {
@@ -74,6 +76,7 @@ const InventoryItem = ({
         status === 'low-stock' ? 'border-l-amber-500' : 'border-l-red-500',
         className
       )}
+      style={style}
     >
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div className="flex-1">
